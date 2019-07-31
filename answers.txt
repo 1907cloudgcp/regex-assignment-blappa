@@ -1,1 +1,110 @@
-this is my answer
+1#
+--Comments: ^caracter to match all lines that begins with caracter
+Zaoshi
+Zhukeng
+Zhongxi
+Zwettl
+Zaragoza
+Zheshart
+Zhuji
+Zadvorsko
+Zhoujia
+
+2#
+--Comments: w*ganb match all lines that content any string 'gan' at the end of the line
+grep -e w*ganb cities.txt
+Tougan
+Pedaringan
+Banjar Sambangan
+Salingogan
+
+3#
+--Comments: -E -c ^A|^D|^E match all lines and count each line start by A or D or E
+grep -E -c ^A|^D|^E cities.txt
+There is 53
+
+#4
+--Comments: ^.ar match all lines start by any caracter and their second is a and their letter is r
+grep -E  ^.ar cities.txt
+There is 19
+
+#5
+--Comments: -c ^C count all lines start by C and we use -v to reverse the result
+grep -v  -c ^C cities.txt
+There is 477
+
+6#
+Comments: ^.{14,}$ match all line that have lease 14 characters
+ egrep -e '^.{14,}$' cities.txt
+San Vicente Pacaya
+Masjed Soleymān
+Saint-Laurent-du-Var
+Charlottenberg
+Barra do Bugres
+Quinta do Anjo
+Vicente Guerrero
+São Pedro da Aldeia
+Atarodangwautu
+Quận Phú Nhuận
+Salon-de-Provence
+Sendangkemulian
+Arraial do Cabo
+Santa Rosa de Viterbo
+Banjar Kelodan
+Vicente Guerrero
+La Cruz de Río Grande
+Klenčí pod Čerchovem
+Nishi-Tokyo-shi
+Balneário Camboriú
+Doctor Juan León Mallorquín
+Szklarska Poręba
+Mautapaga Bawah
+Banjar Sambangan
+Thị Trấn Mỹ Lộc
+Monte Azul Paulista
+Karolino-Buhaz
+Emiliano Zapata
+Santa Cruz das Palmeiras
+Rosario de Mora
+General Manuel J. Campos
+Saint-Quentin-en-Yvelines
+Challhuahuacho
+Banjar Dharmasemedi
+Porto Ferreira
+Thị Trấn Ngọc Lặc
+Refojos de Riba de Ave
+Salt Lake City
+Bayan Uula Sumu
+Chervonopartyzans’k
+Bajo Naranjillo
+Thành Phố Phủ Lý
+Ambohitrolomahitsy
+Barão de Cocais
+
+7#
+Comments:  ^B match all lines starting by B
+grep -c ^B cities.txt
+There is 39
+
+8#
+Comments:  grep -c d cities.txt match number of times the letter 'd' repeats
+grep -c 'd' cities.txt
+There is 79
+
+9#
+Comments: ([a-z])\1$ wiil match all lines who match the substring will match with last first string of that line 
+grep -iE ([a-z])\1$ cities.txt 
+Izobil’nyy
+Invercargill
+Ingersoll
+Villa Gesell
+Ishii
+Ingersoll
+
+10#
+Comments: ^([a-z])([a-z])[a-z]\2\1$ match all lines with five characters by the start to end of the line  
+grep -iE ^([a-z])([a-z])[a-z]\2\1$ cities.txt 
+Anina
+Navan
+Noxon
+
